@@ -12,23 +12,31 @@ class Journal {
     //Now making the writing and saving part of the Journal
 
     public void Journal_write(){
-
         //we have to get the file name from the user
         Console.WriteLine("What is the filename?");
         string fileName = Console.ReadLine();
-        //now we are writing to the file the content of the entries
-        using (StreamWriter outputFile = new StreamWriter(fileName))
-        {
-            //so we know what the data below it represnets
-            outputFile.WriteLine("Date,Prompt,Respone,Author");
-           foreach (Entry entry in _entries)
-        {
-            outputFile.Write(entry.getEntryToCsv());
-            if(_username == "") {
-                outputFile.WriteLine("N/A");
-            }
-            else {
-                outputFile.WriteLine(_username);
+
+        if (Path.GetExtension(fileName).ToLower() != ".csv"){
+
+            Console.WriteLine("You need to enter the file in as a csv in order to recordy our journal entry");
+
+        } 
+        else { 
+            string username = _username;
+            //now we are writing to the file the content of the entries
+            using (StreamWriter outputFile = new StreamWriter(fileName))
+            {
+                //so we know what the data below it represnets
+                outputFile.WriteLine("Date,Prompt,Respone,Author");
+            foreach (Entry entry in _entries)
+            {
+                outputFile.Write(entry.getEntryToCsv());
+                if(String.IsNullOrEmpty(username)) {
+                    outputFile.WriteLine("N/A");
+                }
+                else {
+                    outputFile.WriteLine(_username);
+                }
             }
         }
 
