@@ -20,16 +20,23 @@ class Journal {
         using (StreamWriter outputFile = new StreamWriter(fileName))
         {
             //so we know what the data below it represnets
-            outputFile.WriteLine("Date,Prompt,Respone");
+            outputFile.WriteLine("Date,Prompt,Respone,Author");
            foreach (Entry entry in _entries)
         {
-            outputFile.WriteLine(entry.getEntryToCsv());
+            outputFile.Write(entry.getEntryToCsv());
+            if(_username == "") {
+                outputFile.WriteLine("N/A");
+            }
+            else {
+                outputFile.WriteLine(_username);
+            }
         }
 
 
         }
 
     }
+    //fun cvs reading so we can load the journal back for the user.
     public void Journal_read() {
          Console.WriteLine("What is the filename?");
         string fileName = Console.ReadLine();
@@ -38,12 +45,15 @@ class Journal {
         //skipping the first line since we are saving it as a csv
         for (int i = 1; i < lines.Length; i++)
         {
+            //we know it is seperated by commams so it's easy to know what parts we are needing to get
             string[] parts = lines[i].Split(",");
 
-            if(parts.Length == 3){
+            //just in case someone edited the file, we just don't want to record the data wrong
+            if(parts.Length == 4){
                 string date = parts[0];
                 string prompt = parts[1];
                 string response = parts[2];
+                string username = parts[3];
 
                 Entry new_entry = new();
                 new_entry._date = date;
@@ -51,9 +61,19 @@ class Journal {
                 new_entry._response = response;
 
                 _entries.Add(new_entry);
+                _username = username;
             }
 
         }
+
+    }
+
+    //We are adding a way for the user to put in the author name of the journal so they know it is their journal. Creative part
+    public void Author_write(Journal journal_name){
+        Console.WriteLine("Who is the author? ");
+        string username = Console.ReadLine();
+        journal_name._username = username;
+
 
     }
     public void Journal_display(){
@@ -62,6 +82,7 @@ class Journal {
             Console.WriteLine();
 
         }
+        Console.WriteLine($"Author: {_username}\n");
 
     }
 }
