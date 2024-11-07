@@ -2,7 +2,7 @@ using System.CodeDom.Compiler;
 
 class Prompt {
     //a list of prompts, making the prompts
-    public List<string> promptList = new List<string>
+    public List<string> _promptList = new List<string>
     {
     "What made you smile today?",
     "What challenge did you face today?",
@@ -22,8 +22,8 @@ class Prompt {
         //we want to get a random number that is within the index. We want it to write it so it matches the size of the list no matter how big it may become
         //next returns a non-negative random integer.
         Random random = new();
-        int index = random.Next(promptList.Count);
-        return promptList[index];
+        int index = random.Next(_promptList.Count);
+        return _promptList[index];
         
 
     }

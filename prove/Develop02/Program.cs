@@ -53,21 +53,23 @@ class Program
 
             }
             else if (user_input == 2){
-                personal_journal.Journal_display();
+                personal_journal.JournalDisplay();
 
 
             }
             else if (user_input == 3){
-                personal_journal.Journal_read();
+                personal_journal.JournalRead();
 
             }
             else if (user_input == 4){
-                personal_journal.Journal_write();
+                // delete instace of journal
+                // create new instance
+                personal_journal.JournalWrite();
 
             }
             else if (user_input == 5){
                 //We are doing this for the extra credit and just makingi it a way to know who owns the journal. Might be fun to make a password system.
-                personal_journal.Author_write(personal_journal);
+                personal_journal.AuthorWrite(personal_journal);
 
             }
         }
