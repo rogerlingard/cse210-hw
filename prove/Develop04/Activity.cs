@@ -1,5 +1,3 @@
-using System.ComponentModel.DataAnnotations;
-using System.Dynamic;
 class Activity {
     private List<String> _promptString; 
     private int _durationTime; 
@@ -30,32 +28,48 @@ class Activity {
         return _promptString;
     }   
 
-    public void setPromptString(List<String> listOfString){
+    public void SetPromptString(List<String> listOfString){
         _promptString = listOfString;
     }
 
+    public string GetRandomPrompt(List<string> prompt){
+        Random random = new Random();
+        int index = random.Next(GetPromptString().Count);
+        return GetPromptString()[index];
 
+    }
     public string GetDescription(){
         return _description;
     }
 
-    public void DisplayStart(){
-        loaderPart();
-        Console.WriteLine($"Welcome to the {_name}");
+    public virtual int DisplayStart(){
+        Console.WriteLine($"Welcome to the {_name} Activity\n");
         Console.WriteLine(_description);
+
+        Console.WriteLine("\nHow long, in seconds, would you like to do this for? ");
+
+        int durationTime = int.Parse(Console.ReadLine()); 
+
+        Console.Clear();
+        Console.WriteLine("Get ready...");
+        loaderPart(5);
+
+        return durationTime;
 
     }
 
 
     public void displayEnd(){
         Console.WriteLine("Well done!");
-        Console.WriteLine($"You have completed the {_name}");
+        Console.WriteLine($"You have completed {_durationTime} seconds of the {_name}");
+        loaderPart(5);
+        Console.Clear();
 
     }
 
-    public void loaderPart(){
+    public void loaderPart(double seconds){
         DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(2);
+        DateTime endTime = startTime.AddSeconds(seconds);
         while (DateTime.Now < endTime)
         {
             Console.Write(".");
@@ -80,6 +94,15 @@ class Activity {
             Console.Write("\b \b");
         }
 
+    }
+
+    public void CountDown(int seconds) {
+    for (int i = seconds; i > 0; i--){
+        Console.Write($"{i}");
+        Thread.Sleep(1000);
+        Console.Write("\b \b");
+            
+        }
     }
 
 

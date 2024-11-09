@@ -1,4 +1,5 @@
 using System;
+using Develop04;
 
 class Program
 {
@@ -20,6 +21,14 @@ class Program
             if(choice == 1){
                 BreathingActivity breathingActivity = new();
                 breathingActivity.BreathingExersise();
+            }
+            else if(choice == 2){
+                ReflectingActivity reflectingActivity = new();
+                reflectingActivity.RefelctingExercise();
+            }
+            else if(choice == 3){
+                ListeningActivity listeningActivity = new();
+                listeningActivity.ListeningExercise();
             }
             else if (choice == 4) {
                 break;
