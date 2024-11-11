@@ -18,6 +18,7 @@ class ReflectingActivity : Activity {
     public void RefelctingExercise() {
         Console.Clear();
         int durationTime = DisplayStart();
+
         
         
         SetTimer(durationTime);
@@ -58,7 +59,7 @@ class ReflectingActivity : Activity {
                 
                 DateTime questionStartTime = DateTime.Now;
                 while ((DateTime.Now - questionStartTime).TotalSeconds < pauseTime){
-                    loaderPart(0.001);
+                    LoaderPart(0.001);
 
                     elapsed = (int)(DateTime.Now - startTime).TotalSeconds;
                     if (elapsed >= GetTimer()){ 
@@ -72,7 +73,7 @@ class ReflectingActivity : Activity {
 
                 if (elapsed >= GetTimer()) break;
             }
-            displayEnd();
+            DisplayEnd();
 
 
         }

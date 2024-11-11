@@ -39,7 +39,7 @@ class BreathingActivity : Activity {
 
         Console.Clear();
         Console.WriteLine("Get ready...");
-        loaderPart(5);
+        LoaderPart(5);
 
         return durationTime;
     }
@@ -67,7 +67,7 @@ class BreathingActivity : Activity {
             Console.WriteLine("\n");
         }
         Console.WriteLine();
-        displayEnd();
+        DisplayEnd();
 
 
     }

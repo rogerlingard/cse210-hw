@@ -35,10 +35,10 @@ class ListeningActivity : Activity {
             if (elapsed >= GetTimer()) break;
         }
         Console.WriteLine($"You listed {counter} items!");
-        loaderPart(5);
+        LoaderPart(5);
         Console.WriteLine();
 
-        displayEnd();
+        DisplayEnd();
 
     }
 

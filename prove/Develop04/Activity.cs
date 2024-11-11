@@ -24,11 +24,11 @@ class Activity {
         return _name;
     }
 
-    public List<String> GetPromptString(){
+    public List<string> GetPromptString(){
         return _promptString;
     }   
 
-    public void SetPromptString(List<String> listOfString){
+    public void SetPromptString(List<string> listOfString){
         _promptString = listOfString;
     }
 
@@ -52,22 +52,22 @@ class Activity {
 
         Console.Clear();
         Console.WriteLine("Get ready...");
-        loaderPart(5);
+        LoaderPart(5);
 
         return durationTime;
 
     }
 
 
-    public void displayEnd(){
+    public void DisplayEnd(){
         Console.WriteLine("Well done!");
         Console.WriteLine($"You have completed {_durationTime} seconds of the {_name}");
-        loaderPart(5);
+        LoaderPart(5);
         Console.Clear();
 
     }
 
-    public void loaderPart(double seconds){
+    public void LoaderPart(double seconds){
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(seconds);
         while (DateTime.Now < endTime)
@@ -101,9 +101,7 @@ class Activity {
         Console.Write($"{i}");
         Thread.Sleep(1000);
         Console.Write("\b \b");
-            
         }
     }
-
 
 }
