@@ -1,6 +1,6 @@
 class ListeningActivity : Activity {
 
-    public ListeningActivity() : base("Listening\n", "This activity will help you reflect on the good things in your life by having you list as many things as you can  in a certain area\n")
+    public ListeningActivity() : base("Listening", "This activity will help you reflect on the good things in your life by having you list as many things as you can  in a certain area\n")
     { }
 
     public void ListeningExercise(){

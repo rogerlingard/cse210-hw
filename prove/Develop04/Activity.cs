@@ -61,7 +61,7 @@ class Activity {
 
     public void DisplayEnd(){
         Console.WriteLine("Well done!");
-        Console.WriteLine($"You have completed {_durationTime} seconds of the {_name}");
+        Console.WriteLine($"You have completed {_durationTime} seconds of the {_name} Activity");
         LoaderPart(5);
         Console.Clear();
 
