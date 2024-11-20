@@ -27,8 +27,8 @@ class Program
                 reflectingActivity.RefelctingExercise();
             }
             else if(choice == 3){
-                ListeningActivity listeningActivity = new();
-                listeningActivity.ListeningExercise();
+                ListeningActivity listingActivity = new();
+                listingActivity.ListingExercise();
             }
             else if (choice == 4) {
                 break;
