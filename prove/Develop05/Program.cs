@@ -24,6 +24,7 @@ class Program
                 Console.WriteLine("  1. Simple Goal");
                 Console.WriteLine("  2. Eternal Goal");
                 Console.WriteLine("  3. Checklist Goal");
+                Console.WriteLine("  4. Vice");
                 Console.WriteLine("Which type of goal would you like to create? ");
                 int goal_choice = int.Parse(Console.ReadLine());
 
@@ -51,6 +52,16 @@ class Program
                     Console.WriteLine();
                     Console.WriteLine($"You have {goalList.getTotalPoint()} points.");
                     Console.WriteLine();
+                }
+                else if(goal_choice == 4){
+
+                    Vice vice = new();
+                    vice.askQuestion();
+                    goalList.addGoal(vice);
+                    Console.WriteLine();
+                    Console.WriteLine($"You have {goalList.getTotalPoint()} points.");
+                    Console.WriteLine();
+                    
                 }
                 else{
                     Console.WriteLine("Please input a valid number");

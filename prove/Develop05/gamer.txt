@@ -1,0 +1,4 @@
+70
+ViceGoal:asdfdfs,jkjkjkkjk,-30
+SimpleGoal:asdf,jkjkjkj,100,True
+EternalGoal:game to heaven,grameringd,30

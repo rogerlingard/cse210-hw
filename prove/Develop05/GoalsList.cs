@@ -179,6 +179,14 @@
                     
                     _goalList.Add(goal);
                 }
+                else if(goalType == "ViceGoal"){
+                    Vice goal = new();
+                    goal.setGoalName(parts[0]);
+                    goal.setDescription(parts[1]);
+                    goal.setPoints(int.Parse(parts[2]));
+
+                    _goalList.Add(goal);
+                }
                 
                 
             }
