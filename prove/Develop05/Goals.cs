@@ -1,4 +1,6 @@
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.CompilerServices;
+using System.IO;
 
 public  abstract class Goals{
     private string _name;
@@ -36,29 +38,30 @@ public  abstract class Goals{
         _points = points;
     }
 
-    public bool getCompleted(){
+    public  virtual bool getCompleted(){
         return _completed;
     }
-    public void setComplete(bool complete){
+    public virtual void setComplete(bool complete){
         _completed = complete;
     }
 
-    public virtual void displayGoals(){
-        Console.WriteLine("The goals are:");
-        
+    public virtual void displayGoals(){       
     }
 
     public virtual void askQuestion(){
-        Console.WriteLine("What is the name of your goal? ");
+        Console.Write("What is the name of your goal? ");
         setGoalName(Console.ReadLine());
-        Console.WriteLine("What is a short descrption of it? ");
+        Console.Write("What is a short descrption of it? ");
         setDescription(Console.ReadLine());
-        Console.WriteLine("What is the amount of points associted with this goal? ");
+        Console.Write("What is the amount of points associted with this goal? ");
         setPoints(int.Parse(Console.ReadLine()));
         setComplete(false);
-        Console.WriteLine();
-        Console.WriteLine($"Points: {getPoints()}");
+
     }
 
+    public virtual string writeGoal(){
+        return "";
+
+    }
 
 }

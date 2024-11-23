@@ -15,7 +15,7 @@ class Program
             Console.WriteLine("  5. Record Event");
             Console.WriteLine("  6. Quit");
 
-            Console.WriteLine("Select a choice from the menu: ");
+            Console.Write("Select a choice from the menu: ");
 
             int choice = int.Parse(Console.ReadLine());
 
@@ -31,12 +31,49 @@ class Program
                     Simple simpleGoal = new();
                     simpleGoal.askQuestion();
                     goalList.addGoal(simpleGoal);
+                    Console.WriteLine();
+                    Console.WriteLine($"You have {goalList.getTotalPoint()} points.");
+                    Console.WriteLine();
                 }
                 else if(goal_choice == 2){
                     Eternal eternalGoal = new();
                     eternalGoal.askQuestion();
                     goalList.addGoal(eternalGoal);
+                    Console.WriteLine();
+                    Console.WriteLine($"You have {goalList.getTotalPoint()} points.");
+                    Console.WriteLine();
                 }
+                else if(goal_choice == 3)
+                {
+                    Checklist checklistGoal = new();
+                    checklistGoal.askQuestion();
+                    goalList.addGoal(checklistGoal);
+                    Console.WriteLine();
+                    Console.WriteLine($"You have {goalList.getTotalPoint()} points.");
+                    Console.WriteLine();
+                }
+                else{
+                    Console.WriteLine("Please input a valid number");
+                }
+            }
+            else if (choice == 2){
+                Console.WriteLine("The goals are:");
+                goalList.displayGoals();
+                Console.WriteLine();
+                Console.WriteLine($"You have {goalList.getTotalPoint()} points.");
+                Console.WriteLine();
+            }
+            else if (choice == 3){
+                goalList.goalWrite();
+            }
+            else if (choice == 4){
+                goalList.goalRead();
+            }
+            else if(choice == 5){
+                goalList.completeGoal();
+            }
+            else if (choice == 6){
+                break;
             }
         }
     }

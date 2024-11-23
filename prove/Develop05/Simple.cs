@@ -1,3 +1,4 @@
+using System.IO;
 class Simple : Goals{
 
     public Simple() {}
@@ -8,11 +9,17 @@ class Simple : Goals{
     public override void displayGoals()
     {
         if(getCompleted()){
-            Console.WriteLine($"1. [X] {getGoalName()} ({getDescription()}) ");
+            Console.WriteLine($"[X] {getGoalName()} ({getDescription()}) ");
         }
-        else{
-            Console.WriteLine($"1. [ ] {getGoalName()} ({getDescription()}) ");
+        else {
+            Console.WriteLine($"[ ] {getGoalName()} ({getDescription()}) ");
         }
+    }
+
+    public override string writeGoal()
+    {
+            string goalCondenseName = $"SimpleGoal:{getGoalName()},{getDescription()},{getPoints()},{getCompleted()}";
+            return goalCondenseName;        
     }
 
 }

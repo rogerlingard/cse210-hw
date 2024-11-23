@@ -1,0 +1,5 @@
+50
+SimpleGoal:asdfasfd,fasdfsdfdfsffsd,20,False
+EternalGoal:adsfasdfsdfsdfdfdf,werwerwererwer,20
+ChecklistGoal:asdfsdfdfdfdffdd,jkjkjkjkjjkj,30,20,3,1
+SimpleGoal:goomba,stomp them,30,False
