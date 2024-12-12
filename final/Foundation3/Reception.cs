@@ -3,7 +3,7 @@ class Reception : Event {
 
 
     public Reception(string title, string description, string date, string time, Address address, string RSVP) : base(title,  description,  date,  time,  address){
-
+        setRSVP(RSVP);
     }
     public void setRSVP(string RSVP){
         _RSVP = RSVP;
@@ -13,7 +13,7 @@ class Reception : Event {
     }
 
     public override string fullDetails(){
-        return $"{standardDetails()}\nEvent Specific:\n\nEmail: {getRSVP()}";
+        return $"{standardDetails()}\nEvent Specific:\nEmail: {getRSVP()}";
     }
     public override string shortDecription()
     {

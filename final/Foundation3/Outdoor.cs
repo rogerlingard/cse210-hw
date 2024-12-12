@@ -4,7 +4,7 @@ class Outdoor : Event {
     private string _weather;
 
     public Outdoor(string title, string description, string date, string time, Address address, string weather) : base(title,  description,  date,  time,  address){
-        
+        setWeather(weather);
     }
 
     public void setWeather(string weather){
@@ -15,7 +15,7 @@ class Outdoor : Event {
     }
 
     public override string fullDetails(){
-        return $"{standardDetails()}\nEvent Specific:\n\nWeather: {getWeather()}";
+        return $"{standardDetails()}\nEvent Specific:\nWeather: {getWeather()}";
     }
     public override string shortDecription()
     {

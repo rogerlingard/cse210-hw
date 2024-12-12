@@ -49,6 +49,6 @@ public class Address{
     }
 
     public string fullAddress(){
-        return $"{getAddress()}, \n{getCity()}, {getStateOrProvince()},\n{getCountry()}";
+        return $"{getAddress()}, \n{getCity()}, {getStateOrProvince()}, {getCountry()}";
     }
 }

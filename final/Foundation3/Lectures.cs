@@ -22,7 +22,7 @@ class Lecture : Event{
     }
 
     public override string fullDetails(){
-        return $"{standardDetails()}\nEvent Specific:\n\nSpeaker Name: {getSpeaker()}\n Capacity: {getCapacity()}";
+        return $"{standardDetails()}\nEvent Specific:\nSpeaker Name: {getSpeaker()}\nCapacity: {getCapacity()}";
     }
     public override string shortDecription()
     {
